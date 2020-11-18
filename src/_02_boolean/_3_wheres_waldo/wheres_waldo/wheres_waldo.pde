@@ -4,25 +4,28 @@
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
 	 * If you are not sure, ask your teacher 
 	 * *****************/
-boolean canPlaySounds = true;
+boolean canPlaySounds = false;
 
 void setup() {
   
   //Find a Where's Waldo picture and drop it into this sketch.     
-  PImage waldo = loadImage("waldo.jpg"); // Change this to match your file name.
-  size(600, 400); 
+  PImage waldo = loadImage("wherewaldo.png"); // Change this to match your file name.
+  size(700, 500); 
   // Resize your waldo picture to the same size as the sketch
-  
+  waldo.resize(width, height);
   // Make the waldo image your sketch background
-
+background(waldo);
 }
 
 void draw() {
 
       // If the user presses the mouse .......
-  
+    if(mousePressed && mouseX < 693 && mouseX > 565 && mouseY > 0 && mouseY < 492) {
+      System.out.println("Waldo found!");
+      text("Waldo found!", 200, 200);
+    }
           // Use this print statement to help you find the location of Waldo to use in the code below
-          // println("X: " + mouseX + " Y: " + mouseY); 
+           println("X: " + mouseX + " Y: " + mouseY); 
     
           // Check if the location of the mouse is anywhere on the image of Waldo.
           // If it is, print “Waldo found!”  Use the text() command to write it on the sketch.
